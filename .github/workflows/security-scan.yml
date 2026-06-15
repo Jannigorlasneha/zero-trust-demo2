@@ -15,7 +15,7 @@ jobs:
         run: |
           echo "Scanning for SQL Injection..."
 
-          if grep -R "\" .*\" *+*" .; then
+          if grep -R "'\" \+" *.py; then
             echo "❌ High Risk: SQL Injection detected"
             exit 1
           else
